@@ -6,8 +6,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   background: url("./bg-image.jpg");
-  background-repeat: no-repeat;
+  background-repeat: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
   background-size: cover;
+  
   min-height: 100%;
 }
 
@@ -33,15 +37,82 @@ input[type=checkbox], label{display:none;}
   width: 100%;
 }
 
-#name-wrapper {
+.main-sect {
+  min-height: 200px;
+  width: 90%;
+  margin: auto;
+}
+
+.left-art {
+  width: 50%;
+  float: left;
+  border: 2px solid #000000;
+  padding: 0px 10px;
+}
+
+.right-art {
+  width: 50%;
+  float: right;
+  border-style: solid; 
+  border-color: #000;
+  border-width: 2px 2px 2px 0px;
+  padding: 0px 10px;
+}
+
+.bottom-art {
+  width: 100%;
+  border: 2px solid #000;
+  margin: 50px 0px;
+  padding: 0px 10px;
+}
+
+.main-sect h1 {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+
+.main-sect p {
+  padding: 0px 10px 10px 0px;
+}
+
+.main-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  min-height: 50px;
+  background-image: url("./header-img.jpg");
+}
+
+.main-footer p {
+  transform: translateY(100%);
+}
+
+.about-art {
+  margin-bottom: 50px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.head-wrapper {
+  width: 90%;
   min-height: 100px;
-  width: 30%;
+  margin: auto;
+}
+
+.name-wrapper {
+  min-height: 100px;
+  width: 50%;
   float: left;
   position: relative;
 }
 
-#name {
-  text-align: center;
+.name {
+  /* text-align: center; */
   /* margin: auto; */
   width: 100%;
   float: left;
@@ -68,58 +139,30 @@ nav ul li {
   padding: 42px 25px;
 }
 
-#main-sect {
-  min-height: 200px;
-  width: 90%;
-  margin: auto;
+a:link, a:visited { 
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.left-art {
-  width: 50%;
+a:link:active, a:visited:active { 
+  color: #000;
+} 
+
+a:hover {
+  color: #fff;
+}
+
+#about-img {
   float: left;
-  border: 2px solid #000000;
+  max-height: 200px;
+  max-width: 200px;
 }
 
-.right-art {
-  width: 50%;
-  float: right;
-  border-style: solid; 
-  border-color: #000;
-  border-width: 2px 2px 2px 0px;
-}
 
-.bottom-art {
-  width: 100%;
-  border: 2px solid #000;
-  margin: 50px 0px;
-}
-
-#main-sect h1 {
-  font-size: 2em;
-  font-weight: bold;
-  padding: 10px;
-}
-
-#main-sect p {
-  padding: 0px 10px 10px 10px;
-}
-
-.main-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  min-height: 50px;
-  background-image: url("./header-img.jpg");
-}
-
-.main-footer p {
-  transform: translateY(100%);
-}
 
 @media only screen and (max-width: 1150px) {
-  #name {
+  .name {
     font-size: 40px;
   }
 }
@@ -127,25 +170,29 @@ nav ul li {
 @media only screen and (max-width: 980px) {
   input[type=checkbox] {position: absolute; top: -9999px; left: -9999px; background:none;}
   input[type=checkbox]:fous{background:none;}
-  label {float:right; padding:8px 0px; display:inline-block; cursor:pointer; }
+  label {float:right; padding:38px 0px; display:inline-block; cursor:pointer; }
   input[type=checkbox]:checked ~ nav {display:block;}
 
-  nav{display:none; position:absolute; right:0px; top:53px; background-color:#c2e1ef; padding:0px; z-index:99;}
+  nav{display:none; position:absolute; right:0px; top:65px; background-color:#c2e1ef; padding:0px; z-index:99;}
   nav ul{width:auto;}
   nav ul li{float:none; padding:10px; width:100%; display:table; border-bottom: 1px solid #000;}
 
-  #name {
+  .name-wrapper {
+    width: 60%;
+  }
+
+  .name {
     font-size: 30px;
   }
 }
 
 @media only screen and (max-width: 680px) {
 
-  #name-wrapper {
+  .name-wrapper {
     width: 70%;
   }
   
-  #name {
+  .name {
     font-size: 30px;
   }
 
@@ -157,7 +204,22 @@ nav ul li {
   .right-art {
     float: none;
     width: 100%;
-    border-width: 0px 2px 2px 2px;
+    border-width: 2px 2px 2px 2px;
+    margin-top: 50px;
   }
 
+}
+
+@media only screen and (max-width: 600px) {
+  #about-img {
+    float: none;
+    display: block;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .name {
+    font-size: 20px;
+  }
 }
