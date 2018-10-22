@@ -153,6 +153,10 @@ a:hover {
   color: #fff;
 }
 
+.name a:hover {
+  color: #000;
+}
+
 #about-img {
   float: left;
   max-height: 200px;
